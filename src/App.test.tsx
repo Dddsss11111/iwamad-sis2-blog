@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { NotFound } from './pages/NotFound'
 import { Login } from './pages/Login'
 
+
 describe('Blog Application Tests', () => {
   it('renders Home page correctly', () => {
     render(
@@ -13,7 +14,7 @@ describe('Blog Application Tests', () => {
         <Home />
       </MemoryRouter>
     )
-    expect(screen.getByText(/Welcome to My Blog/i)).toBeInTheDocument()
+    expect(screen.getByText(/Welcome to My Blog/i)).toBeTruthy()
   })
 
   it('renders NotFound page on unknown route', () => {
@@ -22,7 +23,7 @@ describe('Blog Application Tests', () => {
         <NotFound />
       </MemoryRouter>
     )
-    expect(screen.getByText(/404 - Page Not Found/i)).toBeInTheDocument()
+    expect(screen.getByText(/404 - Page Not Found/i)).toBeTruthy()
   })
 
   it('handles sign in button click', async () => {

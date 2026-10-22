@@ -4,4 +4,4 @@ export type Post = {
   excerpt: string
   content: string
   likes: number
-}   
+}

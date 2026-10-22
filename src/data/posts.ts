@@ -1,10 +1,4 @@
-type Post = {
-  id: number
-  title: string
-  excerpt: string
-  content: string
-  likes: number
-}
+import type { Post } from '../types'
 
 export const initialPosts: Post[] = [
   {
