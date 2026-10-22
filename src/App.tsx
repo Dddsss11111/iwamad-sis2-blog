@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { ProtectedRoute } from './components/ProtectedRoute'
@@ -31,9 +31,12 @@ export function App() {
           <Route path="posts/:id" element={<PostDetail posts={posts} onLike={handleLike} />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
-          
+
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
-            <Route path="dashboard" element={<ProtectedPage onLogout={() => setIsAuthenticated(false)} />} />
+            <Route
+              path="dashboard"
+              element={<ProtectedPage onLogout={() => setIsAuthenticated(false)} />}
+            />
           </Route>
 
           <Route path="*" element={<NotFound />} />
@@ -42,5 +45,4 @@ export function App() {
     </BrowserRouter>
   )
 }
-
-export default App
+export default App;
