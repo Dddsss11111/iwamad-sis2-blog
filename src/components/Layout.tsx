@@ -3,15 +3,11 @@ import { Outlet } from 'react-router-dom'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 
-type LayoutProps = {
-  isAuthenticated: boolean
-}
-
-export const Layout: React.FC<LayoutProps> = ({ isAuthenticated }) => {
+export const Layout: React.FC = () => {
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-      <Navbar isAuthenticated={isAuthenticated} />
-      <main style={{ padding: '1rem 0' }}>
+    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+      <Navbar />
+      <main className="flex-1 max-w-5xl w-full mx-auto p-6">
         <Outlet />
       </main>
       <Footer />

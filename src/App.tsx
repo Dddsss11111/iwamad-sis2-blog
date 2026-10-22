@@ -25,7 +25,7 @@ export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
-        <Route path="/" element={<Layout isAuthenticated={isAuthenticated} />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="posts" element={<PostsList posts={posts} onLike={handleLike} />} />
           <Route path="posts/:id" element={<PostDetail posts={posts} onLike={handleLike} />} />
